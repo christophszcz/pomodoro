@@ -6,3 +6,10 @@ body{
   background: -moz-linear-gradient(180deg, #45ADA8, #9DE0AD); /* For Firefox 3.6 to 15 */
   background: linear-gradient(180deg, #45ADA8, #9DE0AD);  
 }
+
+.title{
+	text-align: center;
+	color: #fff;
+	font-size: 55px;
+	font-family: 'Damion', cursive;
+}
