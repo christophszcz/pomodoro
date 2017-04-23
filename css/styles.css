@@ -25,3 +25,11 @@ body{
   width: 200px;
   border: 2px solid #fff;
 }
+
+.top-glass{
+	border-radius: 70px 70px 500px 500px;
+}
+
+.bottom-glass{
+	border-radius: 500px 500px 70px 70px;
+}
