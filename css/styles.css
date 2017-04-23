@@ -13,3 +13,15 @@ body{
 	font-size: 55px;
 	font-family: 'Damion', cursive;
 }
+
+.box{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.glass{
+  height: 200px;
+  width: 200px;
+  border: 2px solid #fff;
+}
