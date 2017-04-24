@@ -6,10 +6,14 @@ var Timer = {
 // while (timer.minutes > 0) {
 // 	function 
 
-// }
+// Seconds  
 
 var clock = document.getElementById('clock');
-clock.innerHTML = ("<p>" + Timer.seconds + "</p>");
+var display = Timer.seconds;
+if (Timer.seconds === 60){
+	display = '00';
+} 
+clock.innerHTML = ("<p>" + display + "</p>");
 
 function addDigit(num) {
   return (num < 10) ? '0' + num.toString() : num.toString();
@@ -18,7 +22,7 @@ function addDigit(num) {
 function secondsCountDown(){
 	if (Timer.seconds <= 0){
 		Timer.seconds = 60;
-	}
+	} 
 	Timer.seconds -- ;
 	clock.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
 }
