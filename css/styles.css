@@ -27,7 +27,12 @@ body{
 }
 
 .top-glass{
-	border-radius: 70px 70px 500px 500px;
+	/*border-radius: 70px 70px 500px 500px;*/
+  position: relative;
+  width: 172px;
+  border-width: 120px 40px 0;
+  border-style: solid;
+  border-color: #fff transparent;
 }
 
 .bottom-glass{
