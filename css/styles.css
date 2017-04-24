@@ -12,6 +12,7 @@ body{
 	color: #fff;
 	font-size: 55px;
 	font-family: 'Damion', cursive;
+	margin-bottom: 50px;
 }
 
 .box{
@@ -21,20 +22,24 @@ body{
 }
 
 .glass{
-  height: 200px;
   width: 200px;
   border: 2px solid #fff;
 }
 
 .top-glass{
-	/*border-radius: 70px 70px 500px 500px;*/
+	border-radius: 300px 300px 500px 500px;
   position: relative;
   width: 172px;
-  border-width: 120px 40px 0;
+  border-width: 130px 65px 0;
   border-style: solid;
   border-color: #fff transparent;
 }
 
 .bottom-glass{
-	border-radius: 500px 500px 70px 70px;
+  position: relative;
+  width: 172px;
+  border-width: 0 65px 130px;
+  border-style: solid;
+  border-color: #fff transparent;
+  border-radius: 500px 500px 300px 300px;
 }
