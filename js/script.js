@@ -3,6 +3,10 @@ var Timer = {
 	seconds: 60
 };
 
+var counting = false;
+
+var startTimerButton = document.getElementById('start');
+
 // while (timer.minutes > 0) {
 // 	function 
 
@@ -20,6 +24,7 @@ function addDigit(num) {
 }
 
 function secondsCountDown(){
+	counting = true;
 	if (Timer.seconds <= 0){
 		Timer.seconds = 60;
 	} 
@@ -27,5 +32,12 @@ function secondsCountDown(){
 	clock.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
 }
 
-setInterval(secondsCountDown, 1000);
- 
+startTimerButton.addEventListener('click', clickCountDown);
+function clickCountDown(){
+	if (counting === false){
+		secondsInterval = window.setInterval(secondsCountDown, 1000);
+	} else{
+		counting = false;
+		clearInterval(secondsInterval);
+	}	
+}
