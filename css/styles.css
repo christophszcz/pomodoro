@@ -43,3 +43,8 @@ body{
   border-color: #fff transparent;
   border-radius: 500px 500px 300px 300px;
 }
+
+.clock{
+	text-align: center;
+	color: #fff;
+}
