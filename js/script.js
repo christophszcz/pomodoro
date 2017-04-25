@@ -40,13 +40,8 @@ function secondsCountDown(){
 	if(Timer.seconds === 00 && Timer.minutes === 0){
 		countingMinutes = false;
 		clearInterval(secondsInterval);
-		var audio = new Audio('audio/strangeAlarm.mp3'); 
+		document.getElementById('alarm-noise').play();
 		audioPlaying = true;
-		audio.addEventListener('ended', function() {
-    	this.currentTime = 0;
-    	this.play();
-		}, false);
-		audio.play();
 	}
 }
 
@@ -62,6 +57,7 @@ function clickCountDown(){
 
 resetTimerButton.addEventListener('click', function(){
 	counting = false;
+	secondsInterval = window.setInterval(secondsCountDown, 1000);
 	clearInterval(secondsInterval);
 	Timer.seconds = 0;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
@@ -69,8 +65,12 @@ resetTimerButton.addEventListener('click', function(){
 	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 });
 
-// toggleAudio.addEventListener('click', function(){
-// 	audio = new Audio('audio/strangeAlarm.mp3'); 
-// 	audio.pause();
-// 	audioPlaying = false;
-// });
+toggleAudio.addEventListener('click', function(){
+	if (audioPlaying){
+		document.getElementById('alarm-noise').pause();
+		audioPlaying = false;
+	} else {
+		document.getElementById('alarm-noise').play();
+		audioPlaying = true;
+	}
+});
