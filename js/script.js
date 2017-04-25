@@ -47,8 +47,17 @@ function secondsCountDown(){
 
 startStopTimerButton.addEventListener('click', clickCountDown);
 function clickCountDown(){
-	if (countingMinutes === false){
+	if (countingMinutes === false && !(Timer.seconds === 00 && Timer.minutes === 0)){
 		secondsInterval = window.setInterval(secondsCountDown, 1000);
+	} else if (Timer.seconds === 00 && Timer.minutes === 0){
+		countingMinutes = false;
+		clearInterval(secondsInterval);
+		Timer.seconds = 0;
+		seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
+		Timer.minutes = 1;
+		minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
+		document.getElementById('alarm-noise').pause();
+		audioPlaying = false;
 	} else {
 		countingMinutes = false;
 		clearInterval(secondsInterval);
@@ -56,7 +65,7 @@ function clickCountDown(){
 }
 
 resetTimerButton.addEventListener('click', function(){
-	counting = false;
+	countingMinutes = false;
 	clearInterval(secondsInterval);
 	Timer.seconds = 0;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
