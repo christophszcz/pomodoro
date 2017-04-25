@@ -3,41 +3,46 @@ var Timer = {
 	seconds: 60
 };
 
-var counting = false;
-
+var countingMinutes = false;
 var startTimerButton = document.getElementById('start');
 
-// while (timer.minutes > 0) {
-// 	function 
+// Minutes / Seconds 
 
-// Seconds  
-
-var clock = document.getElementById('clock');
+var seconds = document.getElementById('seconds');
 var display = Timer.seconds;
+var minutes = document.getElementById('minutes');
+
+minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
+
 if (Timer.seconds === 60){
 	display = '00';
 } 
-clock.innerHTML = ("<p>" + display + "</p>");
+
+seconds.innerHTML = ("<p>" + display + "</p>");
 
 function addDigit(num) {
   return (num < 10) ? '0' + num.toString() : num.toString();
 }
 
 function secondsCountDown(){
-	counting = true;
+	countingMinutes = true;
+	if (Timer.seconds === 60 || Timer.seconds === 00 ){
+		Timer.minutes = Timer.minutes - 1;
+		minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
+	} 
 	if (Timer.seconds <= 0){
 		Timer.seconds = 60;
 	} 
-	Timer.seconds -- ;
-	clock.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
+	Timer.seconds-- ;
+	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
 }
 
 startTimerButton.addEventListener('click', clickCountDown);
 function clickCountDown(){
-	if (counting === false){
+	if (countingMinutes === false){
 		secondsInterval = window.setInterval(secondsCountDown, 1000);
 	} else{
-		counting = false;
+		countingMinutes = false;
 		clearInterval(secondsInterval);
 	}	
 }
