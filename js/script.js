@@ -1,5 +1,5 @@
 var Timer = {
-	minutes: 25,
+	minutes: 1,
 	seconds: 60
 };
 
@@ -35,14 +35,18 @@ function secondsCountDown(){
 	} 
 	Timer.seconds-- ;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
+	if(Timer.seconds === 00 && Timer.minutes === 0){
+		countingMinutes = false;
+		clearInterval(secondsInterval);
+	}
 }
 
 startTimerButton.addEventListener('click', clickCountDown);
 function clickCountDown(){
 	if (countingMinutes === false){
 		secondsInterval = window.setInterval(secondsCountDown, 1000);
-	} else{
+	}else {
 		countingMinutes = false;
 		clearInterval(secondsInterval);
-	}	
+	}
 }
