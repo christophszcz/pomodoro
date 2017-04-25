@@ -1,5 +1,5 @@
 var Timer = {
-	minutes: 1,
+	minutes: 25,
 	seconds: 60
 };
 
