@@ -39,6 +39,8 @@ function secondsCountDown(){
 	if(Timer.seconds === 00 && Timer.minutes === 0){
 		countingMinutes = false;
 		clearInterval(secondsInterval);
+		var audio = new Audio('audio/strangeAlarm.mp3'); 
+		audio.play();
 	}
 }
 
