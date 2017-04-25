@@ -57,19 +57,20 @@ function clickCountDown(){
 
 resetTimerButton.addEventListener('click', function(){
 	counting = false;
-	secondsInterval = window.setInterval(secondsCountDown, 1000);
 	clearInterval(secondsInterval);
 	Timer.seconds = 0;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
 	Timer.minutes = 1;
 	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
+	document.getElementById('alarm-noise').pause();
+	audioPlaying = false;
 });
 
 toggleAudio.addEventListener('click', function(){
-	if (audioPlaying){
+	if (audioPlaying && (Timer.seconds === 00 && Timer.minutes === 0)){
 		document.getElementById('alarm-noise').pause();
 		audioPlaying = false;
-	} else {
+	} else if ((Timer.seconds === 00 && Timer.minutes === 0)) {
 		document.getElementById('alarm-noise').play();
 		audioPlaying = true;
 	}
