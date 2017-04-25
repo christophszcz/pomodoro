@@ -44,7 +44,10 @@ body{
   border-radius: 500px 500px 300px 300px;
 }
 
-#clock{
+.time{
+  display: flex;
+  justify-content: center;
 	text-align: center;
 	color: #fff;
+	font-size: 25px;
 }
