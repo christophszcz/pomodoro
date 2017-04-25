@@ -7,13 +7,23 @@ body{
   background: linear-gradient(180deg, #45ADA8, #9DE0AD);  
 }
 
+/* Titles */
+
 .title{
 	text-align: center;
 	color: #fff;
 	font-size: 55px;
 	font-family: 'Damion', cursive;
-	margin-bottom: 50px;
 }
+
+.action {
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+/* Hourglass */
 
 .box{
 	display: flex;

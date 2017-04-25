@@ -54,7 +54,7 @@ function clickCountDown(){
 		clearInterval(secondsInterval);
 		Timer.seconds = 0;
 		seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
-		Timer.minutes = 1;
+		Timer.minutes = 25;
 		minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 		document.getElementById('alarm-noise').pause();
 		audioPlaying = false;
@@ -69,7 +69,7 @@ resetTimerButton.addEventListener('click', function(){
 	clearInterval(secondsInterval);
 	Timer.seconds = 0;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
-	Timer.minutes = 1;
+	Timer.minutes = 25;
 	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 	document.getElementById('alarm-noise').pause();
 	audioPlaying = false;
