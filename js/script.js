@@ -4,9 +4,10 @@ var Timer = {
 };
 
 var countingMinutes = false;
-var startTimerButton = document.getElementById('start');
+var startStopTimerButton = document.getElementById('start');
+var resetTimerButton = document.getElementById('reset');
 
-// Minutes / Seconds 
+// Work Timer 
 
 var seconds = document.getElementById('seconds');
 var display = Timer.seconds;
@@ -41,12 +42,21 @@ function secondsCountDown(){
 	}
 }
 
-startTimerButton.addEventListener('click', clickCountDown);
+startStopTimerButton.addEventListener('click', clickCountDown);
 function clickCountDown(){
 	if (countingMinutes === false){
 		secondsInterval = window.setInterval(secondsCountDown, 1000);
-	}else {
+	} else {
 		countingMinutes = false;
 		clearInterval(secondsInterval);
 	}
 }
+
+resetTimerButton.addEventListener('click', function(){
+	counting = false;
+	clearInterval(secondsInterval);
+	Timer.seconds = 0;
+	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
+	Timer.minutes = 1;
+	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
+});
