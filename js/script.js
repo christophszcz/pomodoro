@@ -3,9 +3,10 @@ var Timer = {
 	seconds: 60
 };
 
-var countingMinutes = false;
+var countingMinutes = false, audioPlaying = true;
 var startStopTimerButton = document.getElementById('start');
 var resetTimerButton = document.getElementById('reset');
+var toggleAudio = document.getElementById('audio');
 
 // Work Timer 
 
@@ -40,6 +41,11 @@ function secondsCountDown(){
 		countingMinutes = false;
 		clearInterval(secondsInterval);
 		var audio = new Audio('audio/strangeAlarm.mp3'); 
+		audioPlaying = true;
+		audio.addEventListener('ended', function() {
+    	this.currentTime = 0;
+    	this.play();
+		}, false);
 		audio.play();
 	}
 }
@@ -62,3 +68,9 @@ resetTimerButton.addEventListener('click', function(){
 	Timer.minutes = 1;
 	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 });
+
+// toggleAudio.addEventListener('click', function(){
+// 	audio = new Audio('audio/strangeAlarm.mp3'); 
+// 	audio.pause();
+// 	audioPlaying = false;
+// });
