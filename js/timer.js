@@ -9,6 +9,7 @@ var resetTimerButton = document.getElementById('reset');
 var toggleAudio = document.getElementById('audio');
 var start = document.getElementById('start-page');
 spinner = $( "#spinner" ).spinner();
+var goBack = document.getElementById('go-back');
 
 /* Start Page */
 
@@ -99,4 +100,17 @@ toggleAudio.addEventListener('click', function(){
 		document.getElementById('alarm-noise').play();
 		audioPlaying = true;
 	}
+});
+
+goBack.addEventListener('click', function(){
+	document.getElementById('timer-selection-id').style.display = 'flex';
+	countingMinutes = false;
+	secondsInterval = window.setInterval(secondsCountDown, 1000);
+	clearInterval(secondsInterval);
+	Timer.seconds = 0;
+	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
+	Timer.minutes = spinner.spinner( "value" );
+	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
+	document.getElementById('alarm-noise').pause();
+	audioPlaying = false;
 });
