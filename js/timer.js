@@ -7,8 +7,23 @@ var countingMinutes = false, audioPlaying = true;
 var startStopTimerButton = document.getElementById('start');
 var resetTimerButton = document.getElementById('reset');
 var toggleAudio = document.getElementById('audio');
+var start = document.getElementById('start-page');
+spinner = $( "#spinner" ).spinner();
 
-// Work Timer 
+/* Start Page */
+
+start.addEventListener('click', function(){
+	if (spinner.spinner( "value" ) < 0 || spinner.spinner( "value" ) === null ){
+		spinner.spinner( "value", 25 );
+		alert('Please enter a valid time value.');
+	}
+	Timer.minutes = spinner.spinner( "value" );
+	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
+	document.getElementById('timer-selection-id').style.display = 'none'; 
+	clickCountDown();
+});
+
+/* Work Timer */ 
 
 var seconds = document.getElementById('seconds');
 var display = Timer.seconds;
