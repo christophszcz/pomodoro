@@ -1,6 +1,8 @@
 /* Copyright 2017 The jQuery Foundation. jQuery License */
+
 $(function() {
   var spinner = $( "#spinner" ).spinner();
+  spinner.spinner( "value", 25 );
 
   $( "#disable" ).on( "click", function() {
     if ( spinner.spinner( "option", "disabled" ) ) {
@@ -18,9 +20,6 @@ $(function() {
   });
   $( "#getvalue" ).on( "click", function() {
     alert( spinner.spinner( "value" ) );
-  });
-  $( "#setvalue" ).on( "click", function() {
-    spinner.spinner( "value", 5 );
   });
 
   $( "button" ).button();

@@ -66,10 +66,11 @@ function clickCountDown(){
 
 resetTimerButton.addEventListener('click', function(){
 	countingMinutes = false;
+	secondsInterval = window.setInterval(secondsCountDown, 1000);
 	clearInterval(secondsInterval);
 	Timer.seconds = 0;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
-	Timer.minutes = 25;
+	Timer.minutes = spinner.spinner( "value" );
 	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 	document.getElementById('alarm-noise').pause();
 	audioPlaying = false;
