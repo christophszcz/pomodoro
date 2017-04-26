@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
@@ -11,6 +12,12 @@
 	<div class="container">
 		<div class="row">
 			<h1 class="title">Pomodoro Timer</h1>
+			<div class="timer-selection">
+				<p>
+				  <label for="spinner">Work Session:</label>
+				  <input id="spinner" name="value">
+				</p>
+			</div>
 			<div class="timer">
 				<div class="box">
 					<div class="glass top-glass">
@@ -37,14 +44,15 @@
 						<i class="fa fa-volume-up"></i>
 					</button>
 				</div><!-- .button-group -->
-
-			</div>
+			</div><!-- .timer -->
 		</div><!--.row -->
 	</div><!-- .container -->
 
 	<audio id="alarm-noise" src="	audio/strangeAlarm.mp3" type="audio/mpeg" loop></audio>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src='js/spinner.js'></script>
 <script src="js/script.js"></script>
   
 </body>
