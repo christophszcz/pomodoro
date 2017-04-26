@@ -1,5 +1,5 @@
 body{
-  height: 800px;
+  height: 600px;
   background: #45ADA8;  
   background: -webkit-linear-gradient(180deg, #45ADA8, #9DE0AD); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(180deg, #45ADA8, #9DE0AD); /* For Opera 11.1 to 12.0 */
@@ -75,4 +75,8 @@ body{
 
 .fa {
   font-size: 30px;
+}
+
+.fa-play, .fa-pause {
+  font-size: 15px;
 }
