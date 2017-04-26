@@ -80,3 +80,10 @@ body{
 .fa-play, .fa-pause {
   font-size: 15px;
 }
+
+/* Spinner */
+
+#spinner {
+  width: 40px;
+  font-size: 20px;
+}

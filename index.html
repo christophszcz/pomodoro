@@ -5,7 +5,9 @@
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/entire-page.css" />
+  <link rel="stylesheet" href="css/timer.css" />
+  <link rel="stylesheet" href="css/timer-selection.css" />
   <title>Pomodoro Timer</title>
 </head>
 <body>
@@ -15,7 +17,7 @@
 			<div class="timer-selection">
 				<p>
 				  <label for="spinner">Work Session:</label>
-				  <input id="spinner" name="value">
+				  <input id="spinner" name="value" min=0 oninput="validity.valid||(value='');">
 				</p>
 				<button class="btn btn-default" id="start-page">Start!</button>
 			</div>

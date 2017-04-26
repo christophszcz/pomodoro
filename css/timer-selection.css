@@ -1,0 +1,10 @@
+.timer-selection{
+	display: flex;
+	justify-content: center;	
+}
+/* Spinner */
+
+#spinner {
+  width: 40px;
+  font-size: 20px;
+}
