@@ -25,6 +25,7 @@ start.addEventListener('click', function(){
 	Timer.seconds = 0;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
 	document.getElementById('timer-selection-id').style.display = 'none'; 
+	document.getElementById('timer-id').style.display = 'inherit'; 
 	clickCountDown();
 });
 
@@ -110,6 +111,7 @@ toggleAudio.addEventListener('click', function(){
 
 goBack.addEventListener('click', function(){
 	document.getElementById('timer-selection-id').style.display = 'flex';
+	document.getElementById('timer-id').style.display = 'none'; 
 	// resetTimer();
 	countingMinutes = false;
 	clearInterval(secondsInterval);

@@ -1,10 +1,6 @@
-body{
-  height: 600px;
-  background: #45ADA8;  
-  background: -webkit-linear-gradient(180deg, #45ADA8, #9DE0AD); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(180deg, #45ADA8, #9DE0AD); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(180deg, #45ADA8, #9DE0AD); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(180deg, #45ADA8, #9DE0AD);  
+.timer{
+  display: none;
+  justify-content: center;
 }
 
 /* Titles */
@@ -79,11 +75,4 @@ body{
 
 .fa-play, .fa-pause {
   font-size: 15px;
-}
-
-/* Spinner */
-
-#spinner {
-  width: 40px;
-  font-size: 20px;
 }
