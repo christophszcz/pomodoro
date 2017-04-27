@@ -56,7 +56,7 @@ function secondsCountDown(){
 	if (Timer.seconds <= 0){
 		Timer.seconds = 60;
 	} 
-	Timer.seconds-- ;
+	Timer.seconds -- ;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
 	if(Timer.seconds === 00 && Timer.minutes === 0){
 		countingMinutes = false;
@@ -70,7 +70,7 @@ startStopTimerButton.addEventListener('click', clickCountDown);
 function clickCountDown(){
 	if (countingMinutes === false && !(Timer.seconds === 00 && Timer.minutes === 0)){
 		secondsInterval = window.setInterval(secondsCountDown, 1000);
-	} else if (Timer.seconds === 00 && Timer.minutes === 0){
+	} else if ((Timer.seconds === 00 && Timer.minutes === 0) || (Timer.minutes < 0)){
 		countingMinutes = false;
 		clearInterval(secondsInterval);
 		Timer.seconds = 0;
@@ -89,7 +89,6 @@ resetTimerButton.addEventListener('click', resetTimer);
 
 function resetTimer(){
 	countingMinutes = false;
-	secondsInterval = window.setInterval(secondsCountDown, 1000);
 	clearInterval(secondsInterval);
 	Timer.seconds = 0;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
