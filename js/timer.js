@@ -72,7 +72,7 @@ function clickCountDown(){
 		var btn = document.getElementById("start");
 		btn.disabled = true;
 		secondsInterval = window.setInterval(secondsCountDown, 1000);
-		function buttonAvailable(){
+		function buttonAvailable(){ // turn the start/stop button on after 2 seconds
 	    return function(){
 	      btn.disabled = false;
 	    }
@@ -83,7 +83,7 @@ function clickCountDown(){
 		clearInterval(secondsInterval);
 		Timer.seconds = 0;
 		seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
-		Timer.minutes = 25;
+		Timer.minutes = spinner.spinner( "value" );
 		minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 		document.getElementById('alarm-noise').pause();
 		audioPlaying = false;
