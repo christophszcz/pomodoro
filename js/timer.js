@@ -18,8 +18,12 @@ start.addEventListener('click', function(){
 		spinner.spinner( "value", 25 );
 		alert('Please enter a valid time value.');
 	}
+	// resetTimer();
+	countingMinutes = false;
 	Timer.minutes = spinner.spinner( "value" );
 	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
+	Timer.seconds = 0;
+	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
 	document.getElementById('timer-selection-id').style.display = 'none'; 
 	clickCountDown();
 });
@@ -80,7 +84,9 @@ function clickCountDown(){
 	}
 }
 
-resetTimerButton.addEventListener('click', function(){
+resetTimerButton.addEventListener('click', resetTimer);
+
+function resetTimer(){
 	countingMinutes = false;
 	secondsInterval = window.setInterval(secondsCountDown, 1000);
 	clearInterval(secondsInterval);
@@ -90,7 +96,7 @@ resetTimerButton.addEventListener('click', function(){
 	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 	document.getElementById('alarm-noise').pause();
 	audioPlaying = false;
-});
+}
 
 toggleAudio.addEventListener('click', function(){
 	if (audioPlaying && (Timer.seconds === 00 && Timer.minutes === 0)){
@@ -104,13 +110,7 @@ toggleAudio.addEventListener('click', function(){
 
 goBack.addEventListener('click', function(){
 	document.getElementById('timer-selection-id').style.display = 'flex';
+	// resetTimer();
 	countingMinutes = false;
-	secondsInterval = window.setInterval(secondsCountDown, 1000);
 	clearInterval(secondsInterval);
-	Timer.seconds = 0;
-	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
-	Timer.minutes = spinner.spinner( "value" );
-	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
-	document.getElementById('alarm-noise').pause();
-	audioPlaying = false;
 });
