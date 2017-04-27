@@ -8,19 +8,19 @@ var startStopTimerButton = document.getElementById('start');
 var resetTimerButton = document.getElementById('reset');
 var toggleAudio = document.getElementById('audio');
 var start = document.getElementById('start-page');
-spinner = $( "#spinner" ).spinner();
+workSpinner = $( "#workSpinner" ).spinner();
 var goBack = document.getElementById('go-back');
 
 /* Start Page */
 
 start.addEventListener('click', function(){
-	if (spinner.spinner( "value" ) < 0 || spinner.spinner( "value" ) === null ){
-		spinner.spinner( "value", 25 );
+	if (workSpinner.spinner( "value" ) < 0 || workSpinner.spinner( "value" ) === null ){
+		workSpinner.spinner( "value", 25 );
 		alert('Please enter a valid time value.');
 	}
 	// resetTimer();
 	countingMinutes = false;
-	Timer.minutes = spinner.spinner( "value" );
+	Timer.minutes = workSpinner.spinner( "value" );
 	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 	Timer.seconds = 0;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
@@ -83,7 +83,7 @@ function clickCountDown(){
 		clearInterval(secondsInterval);
 		Timer.seconds = 0;
 		seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
-		Timer.minutes = spinner.spinner( "value" );
+		Timer.minutes = workSpinner.spinner( "value" );
 		minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 		document.getElementById('alarm-noise').pause();
 		audioPlaying = false;
@@ -100,7 +100,7 @@ function resetTimer(){
 	clearInterval(secondsInterval);
 	Timer.seconds = 0;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
-	Timer.minutes = spinner.spinner( "value" );
+	Timer.minutes = workSpinner.spinner( "value" );
 	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 	document.getElementById('alarm-noise').pause();
 	audioPlaying = false;
