@@ -69,7 +69,15 @@ function secondsCountDown(){
 startStopTimerButton.addEventListener('click', clickCountDown);
 function clickCountDown(){
 	if (countingMinutes === false && !(Timer.seconds === 00 && Timer.minutes === 0)){
+		var btn = document.getElementById("start");
+		btn.disabled = true;
 		secondsInterval = window.setInterval(secondsCountDown, 1000);
+		function buttonAvailable(){
+	    return function(){
+	      btn.disabled = false;
+	    }
+		}
+		setTimeout(buttonAvailable(), 1000);
 	} else if ((Timer.seconds === 00 && Timer.minutes === 0) || (Timer.minutes < 0)){
 		countingMinutes = false;
 		clearInterval(secondsInterval);
