@@ -63,6 +63,7 @@ function secondsCountDown(){
 		clearInterval(secondsInterval);
 		document.getElementById('alarm-noise').play();
 		audioPlaying = true;
+		document.getElementById('start-break').style.display = 'flex';
 	}
 }
 

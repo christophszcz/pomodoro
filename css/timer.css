@@ -76,3 +76,7 @@
 .fa-play, .fa-pause {
   font-size: 15px;
 }
+
+#start-break{
+  display: none;
+}
