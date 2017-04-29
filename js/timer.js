@@ -123,4 +123,6 @@ goBack.addEventListener('click', function(){
 	// resetTimer();
 	countingMinutes = false;
 	clearInterval(secondsInterval);
+	document.getElementById('alarm-noise').pause();
+	document.getElementById('start-break').style.display = 'none'; 
 });
