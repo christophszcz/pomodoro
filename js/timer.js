@@ -9,7 +9,9 @@ var resetTimerButton = document.getElementById('reset');
 var toggleAudio = document.getElementById('audio');
 var start = document.getElementById('start-page');
 workSpinner = $( "#workSpinner" ).spinner();
+breakSpinner = $( "#breakSpinner" ).spinner();
 var goBack = document.getElementById('go-back');
+var startBreak = document.getElementById('start-break');
 
 /* Start Page */
 
@@ -125,4 +127,11 @@ goBack.addEventListener('click', function(){
 	clearInterval(secondsInterval);
 	document.getElementById('alarm-noise').pause();
 	document.getElementById('start-break').style.display = 'none'; 
+});
+
+startBreak.addEventListener('click', function (){
+	document.getElementById('start-break').style.display = 'none';
+	document.getElementById('alarm-noise').pause();
+	Timer.minutes = breakSpinner.spinner( "value" );
+	clickCountDown();
 });
