@@ -12,6 +12,7 @@ workSpinner = $( "#workSpinner" ).spinner();
 breakSpinner = $( "#breakSpinner" ).spinner();
 var goBack = document.getElementById('go-back');
 var startBreak = document.getElementById('start-break');
+var restartWorkSession = document.getElementById('restart-work-session');
 
 /* Start Page */
 
@@ -67,7 +68,11 @@ function secondsCountDown(){
 		clearInterval(secondsInterval);
 		document.getElementById('alarm-noise').play();
 		audioPlaying = true;
-		document.getElementById('start-break').style.display = 'flex';
+		if ($('#work-text').css('display') === 'block'){
+			document.getElementById('start-break').style.display = 'flex';
+		} else if ($('#break-text').css('display') === 'block'){
+			document.getElementById('restart-work-session').style.display = 'flex';
+		}
 	}
 }
 
@@ -133,9 +138,20 @@ goBack.addEventListener('click', function(){
 
 startBreak.addEventListener('click', function (){
 	document.getElementById('start-break').style.display = 'none';
+	document.getElementById('restart-work-session').style.display = 'none';
 	document.getElementById('alarm-noise').pause();
 	Timer.minutes = breakSpinner.spinner( "value" );
 	document.getElementById('break-text').style.display = 'inherit'; 
 	document.getElementById('work-text').style.display = 'none';
+	clickCountDown();
+});
+
+restartWorkSession.addEventListener('click', function (){
+	document.getElementById('start-break').style.display = 'none';
+	document.getElementById('restart-work-session').style.display = 'none';
+	document.getElementById('alarm-noise').pause();
+	Timer.minutes = workSpinner.spinner( "value" );
+	document.getElementById('break-text').style.display = 'none'; 
+	document.getElementById('work-text').style.display = 'inherit';
 	clickCountDown();
 });

@@ -19,6 +19,14 @@
   margin-bottom: 0px;
 }
 
+#work-text{
+  display: block;
+}
+
+#break-text{
+  display: block;
+}
+
 /* Hourglass */
 
 .box{
@@ -78,5 +86,9 @@
 }
 
 #start-break{
+  display: none;
+}
+
+#restart-work-session {
   display: none;
 }
