@@ -28,6 +28,8 @@ start.addEventListener('click', function(){
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
 	document.getElementById('timer-selection-id').style.display = 'none'; 
 	document.getElementById('timer-id').style.display = 'inherit'; 
+
+	document.getElementById('break-text').style.display = 'none'; 
 	clickCountDown();
 });
 
@@ -133,5 +135,7 @@ startBreak.addEventListener('click', function (){
 	document.getElementById('start-break').style.display = 'none';
 	document.getElementById('alarm-noise').pause();
 	Timer.minutes = breakSpinner.spinner( "value" );
+	document.getElementById('break-text').style.display = 'inherit'; 
+	document.getElementById('work-text').style.display = 'none';
 	clickCountDown();
 });
