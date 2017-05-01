@@ -111,7 +111,11 @@ function resetTimer(){
 	Timer.seconds = 0;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
 	Timer.minutes = workSpinner.spinner( "value" );
-	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
+	if ($('#work-text').css('display') === 'block'){
+		minutes.innerHTML = ("<p>" + workSpinner.spinner( "value" ) + "</p>");
+	} else if ($('#break-text').css('display') === 'block'){
+		minutes.innerHTML = ("<p>" + breakSpinner.spinner( "value" ) + "</p>");
+	}
 	document.getElementById('alarm-noise').pause();
 	audioPlaying = false;
 }
