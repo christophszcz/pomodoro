@@ -150,6 +150,7 @@ startBreak.addEventListener('click', function (){
 	document.getElementById('restart-work-session').style.display = 'none';
 	document.getElementById('alarm-noise').pause();
 	Timer.minutes = breakSpinner.spinner( "value" );
+	minutes.innerHTML = ("<p>" + breakSpinner.spinner( "value" ) + "</p>");
 	document.getElementById('break-text').style.display = 'inherit'; 
 	document.getElementById('work-text').style.display = 'none';
 	clickCountDown();
@@ -160,6 +161,7 @@ restartWorkSession.addEventListener('click', function (){
 	document.getElementById('restart-work-session').style.display = 'none';
 	document.getElementById('alarm-noise').pause();
 	Timer.minutes = workSpinner.spinner( "value" );
+	minutes.innerHTML = ("<p>" + workSpinner.spinner( "value" ) + "</p>");
 	document.getElementById('break-text').style.display = 'none'; 
 	document.getElementById('work-text').style.display = 'inherit';
 	clickCountDown();
