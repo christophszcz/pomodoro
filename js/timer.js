@@ -14,6 +14,10 @@ var goBack = document.getElementById('go-back');
 var startBreak = document.getElementById('start-break');
 var restartWorkSession = document.getElementById('restart-work-session');
 
+var seconds = document.getElementById('seconds');
+var display = Timer.seconds;
+var minutes = document.getElementById('minutes');
+
 /* Start Page */
 
 start.addEventListener('click', function(){
@@ -35,10 +39,6 @@ start.addEventListener('click', function(){
 });
 
 /* Work Timer */ 
-
-var seconds = document.getElementById('seconds');
-var display = Timer.seconds;
-var minutes = document.getElementById('minutes');
 
 minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 
@@ -93,7 +93,11 @@ function clickCountDown(){
 		clearInterval(secondsInterval);
 		Timer.seconds = 0;
 		seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
-		Timer.minutes = workSpinner.spinner( "value" );
+		if ($('#work-text').css('display') === 'block'){
+			document.getElementById('start-break').style.display = 'flex';
+		} else if ($('#break-text').css('display') === 'block'){
+			document.getElementById('restart-work-session').style.display = 'flex';
+		}
 		minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 		document.getElementById('alarm-noise').pause();
 		audioPlaying = false;
@@ -110,10 +114,11 @@ function resetTimer(){
 	clearInterval(secondsInterval);
 	Timer.seconds = 0;
 	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
-	Timer.minutes = workSpinner.spinner( "value" );
 	if ($('#work-text').css('display') === 'block'){
+		Timer.minutes = workSpinner.spinner( "value" );
 		minutes.innerHTML = ("<p>" + workSpinner.spinner( "value" ) + "</p>");
 	} else if ($('#break-text').css('display') === 'block'){
+		Timer.minutes = breakSpinner.spinner( "value" );
 		minutes.innerHTML = ("<p>" + breakSpinner.spinner( "value" ) + "</p>");
 	}
 	document.getElementById('alarm-noise').pause();
