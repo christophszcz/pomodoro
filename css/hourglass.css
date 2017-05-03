@@ -4,6 +4,12 @@ html, body{
   margin: auto;
 }
 
+.box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hourglass{  
   background: white;
   height: 100px;

@@ -27,36 +27,7 @@
   display: block;
 }
 
-/* Hourglass */
-
-.box{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.glass{
-  width: 200px;
-  border: 2px solid #fff;
-}
-
-.top-glass{
-	border-radius: 300px 300px 500px 500px;
-  position: relative;
-  width: 172px;
-  border-width: 130px 65px 0;
-  border-style: solid;
-  border-color: #fff transparent;
-}
-
-.bottom-glass{
-  position: relative;
-  width: 172px;
-  border-width: 0 65px 130px;
-  border-style: solid;
-  border-color: #fff transparent;
-  border-radius: 500px 500px 300px 300px;
-}
+/* Display */
 
 .time{
   display: flex;

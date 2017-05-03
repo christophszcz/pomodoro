@@ -18,16 +18,21 @@
 		<div class="row">
 			<h1 class="title">Pomodoro Timer</h1>
 			<div class="timer-selection" id="timer-selection-id">
-				<p>
-				  <label for="spinner">Work Session:</label>
-				  <input id="workSpinner" class="spinners" name="value" min=1 oninput="validity.valid||(value='');">
-				</p>
-				<p>
-				  <label for="spinner">Break:</label>
-				  <input id="breakSpinner" class="spinners" name="value" min=1 oninput="validity.valid||(value='');">
-				</p>
-				<button class="btn btn-default" id="start-page">Start!</button>
-			</div>
+				<div class="description-spinners">
+					<p class="choose-time">
+					  <label for="spinner">Work Session:</label>
+					  <input id="workSpinner" class="spinners" name="value" min=1 oninput="validity.valid||(value='');">
+					</p>
+					<p class="choose-time">
+					  <label for="spinner">Break:</label>
+					  <input id="breakSpinner" class="spinners" name="value" min=1 oninput="validity.valid||(value='');">
+					</p>
+				</div><!-- .description-spinners -->
+				<div class="button-section">
+					<button class="btn btn-default" id="start-page">Start!</button>
+				</div><!-- .button-section -->
+			</div><!-- .timer-selection -->
+
 			<div class="timer" id="timer-id">
 				<div class="box">
 					<div class="hourglass">
