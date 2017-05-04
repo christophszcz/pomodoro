@@ -37,6 +37,20 @@
 	text-align: center;
 	color: #fff;
 	font-size: 55px;
+  margin-bottom: 10px;
+}
+
+.time-box{
+  display: flex;
+  justify-content: center;
+  border: 2px solid;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+}
+
+p{
+  margin-bottom: 0px;
 }
 
 /* Buttons */
