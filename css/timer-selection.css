@@ -13,7 +13,8 @@
 
 label {
 	color: #fff;
-	font-size: 22px;
+  font-family: 'Roboto', sans-serif;
+	font-size: 28px;
   display: block;
 }
 
@@ -22,7 +23,7 @@ label {
 }
 
 .spinners {
-  width: 40px;
+  width: 30px;
   font-size: 20px;
 }
 

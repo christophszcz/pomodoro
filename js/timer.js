@@ -136,7 +136,7 @@ toggleAudio.addEventListener('click', function(){
 });
 
 goBack.addEventListener('click', function(){
-	document.getElementById('timer-selection-id').style.display = 'flex';
+	document.getElementById('timer-selection-id').style.display = 'block';
 	document.getElementById('timer-id').style.display = 'none'; 
 	// resetTimer();
 	countingMinutes = false;
