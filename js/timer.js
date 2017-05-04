@@ -142,7 +142,10 @@ goBack.addEventListener('click', function(){
 	countingMinutes = false;
 	clearInterval(secondsInterval);
 	document.getElementById('alarm-noise').pause();
-	document.getElementById('start-break').style.display = 'none'; 
+	document.getElementById('start-break').style.display = 'none';
+	document.getElementById('restart-work-session').style.display = 'none';
+	document.getElementById('break-text').style.display = 'none'; 
+	document.getElementById('work-text').style.display = 'inherit'; 
 });
 
 startBreak.addEventListener('click', function (){

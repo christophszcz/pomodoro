@@ -1,3 +1,5 @@
+/* Hourglass */
+
 .box{
   display: flex;
   flex-direction: column;
@@ -42,6 +44,8 @@
 .delayed{
   animation-delay: 0s; 
 }
+
+/* Animations */
 
 @keyframes hourglass{
   0%{
@@ -89,4 +93,3 @@
     transform: translate(35%,40%) rotate(45deg);
   }
 }
-
