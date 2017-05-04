@@ -13,6 +13,7 @@
 }
 
 .action {
+  font-family: 'Roboto', sans-serif;
   font-size: 40px;
   text-align: center;
   color: #fff;
@@ -30,6 +31,7 @@
 /* Display */
 
 .time{
+  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
 	text-align: center;
