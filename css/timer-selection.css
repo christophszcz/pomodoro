@@ -26,10 +26,17 @@ label {
   font-size: 20px;
 }
 
+/* Buttons */
+
 .button-section{
-	display:flex;
-	justify-content: center;
-	margin-left: 38px;
-  margin-top: 50px;
+  display:flex;
+  justify-content: center;
+  margin-left: 38px;
+  margin-top: 20px;
 }
+
+#start-page{
+  background: #1E4744;
+  color: #fff;
+  font-size: 25px;
 }
