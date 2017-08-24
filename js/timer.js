@@ -38,7 +38,7 @@ start.addEventListener('click', function(){
 	clickCountDown();
 });
 
-/* Work Timer */ 
+/* Timer */ 
 
 minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 
