@@ -7,6 +7,12 @@ body{
   background: linear-gradient(180deg, #45ADA8, #9DE0AD);  
 }
 
+/* Timer Selection */
+
+.timer-selection{
+  margin-top: 50px;
+}
+
 /* Dev Info */
 
 .dev-info{
