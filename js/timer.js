@@ -4,7 +4,6 @@ var Timer = {
 	seconds: 60
 };
 
-
 var countingMinutes = false, audioPlaying = true;
 
 //Page elements
@@ -54,8 +53,7 @@ start.addEventListener('click', function(){
 	clickCountDown();
 });
 
-/* Timer */ 
-
+// Timer   
 minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 
 if (Timer.seconds === 60){
@@ -72,13 +70,24 @@ function secondsCountDown(){
 	countingMinutes = true;
 	if (Timer.seconds === 60 || Timer.seconds === 00 ){
 		Timer.minutes = Timer.minutes - 1;
-		minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
+		minutes.innerHTML = (
+				"<p>" + 
+				Timer.minutes + 
+				"</p>"
+		);
 	} 
 	if (Timer.seconds <= 0){
 		Timer.seconds = 60;
 	} 
+
 	Timer.seconds -- ;
-	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
+
+	seconds.innerHTML = (
+			"<p>" + 
+			addDigit(Timer.seconds) + 
+			"</p>"
+	);
+
 	if(Timer.seconds === 00 && Timer.minutes === 0){
 		countingMinutes = false;
 		clearInterval(secondsInterval);
@@ -98,7 +107,9 @@ function clickCountDown(){
 		var btn = document.getElementById("start");
 		btn.disabled = true;
 		secondsInterval = window.setInterval(secondsCountDown, 1000);
-		function buttonAvailable(){ // turn the start/stop button on after 2 seconds
+
+		// Allow the start/stop button to be turned on after 2 seconds
+		function buttonAvailable(){ 
 	    return function(){
 	      btn.disabled = false;
 	    }
@@ -114,7 +125,11 @@ function clickCountDown(){
 		} else if ($('#break-text').css('display') === 'block'){
 			document.getElementById('restart-work-session').style.display = 'flex';
 		}
-		minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
+		minutes.innerHTML = (
+				"<p>" + 
+				Timer.minutes + 
+				"</p>"
+		);
 		document.getElementById('alarm-noise').pause();
 		audioPlaying = false;
 	} else {
@@ -154,7 +169,6 @@ toggleAudio.addEventListener('click', function(){
 goBack.addEventListener('click', function(){
 	document.getElementById('timer-selection-id').style.display = 'block';
 	document.getElementById('timer-id').style.display = 'none'; 
-	// resetTimer();
 	countingMinutes = false;
 	clearInterval(secondsInterval);
 	document.getElementById('alarm-noise').pause();
