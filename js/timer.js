@@ -1,39 +1,55 @@
+//Initial time
 var Timer = {
 	minutes: 25,
 	seconds: 60
 };
 
+
 var countingMinutes = false, audioPlaying = true;
+
+//Page elements
 var startStopTimerButton = document.getElementById('start');
 var resetTimerButton = document.getElementById('reset');
 var toggleAudio = document.getElementById('audio');
 var start = document.getElementById('start-page');
-workSpinner = $( "#workSpinner" ).spinner();
-breakSpinner = $( "#breakSpinner" ).spinner();
+var workSpinner = $( "#workSpinner" ).spinner();
+var breakSpinner = $( "#breakSpinner" ).spinner();
 var goBack = document.getElementById('go-back');
 var startBreak = document.getElementById('start-break');
 var restartWorkSession = document.getElementById('restart-work-session');
 
+//Time Variables
 var seconds = document.getElementById('seconds');
 var display = Timer.seconds;
 var minutes = document.getElementById('minutes');
 
-/* Start Page */
-
+// Start Page  
 start.addEventListener('click', function(){
+
 	if (workSpinner.spinner( "value" ) < 0 || workSpinner.spinner( "value" ) === null ){
 		workSpinner.spinner( "value", 25 );
 		alert('Please enter a valid time value.');
 	}
-	// resetTimer();
+
 	countingMinutes = false;
-	Timer.minutes = workSpinner.spinner( "value" );
-	minutes.innerHTML = ("<p>" + Timer.minutes + "</p>");
 	Timer.seconds = 0;
-	seconds.innerHTML = ("<p>" + addDigit(Timer.seconds) + "</p>");
+
+	Timer.minutes = workSpinner.spinner( "value" );
+	minutes.innerHTML = (
+			"<p>" + 
+			Timer.minutes + 
+			"</p>"
+	);
+
+	seconds.innerHTML = (
+			"<p>" + 
+			addDigit(Timer.seconds) + 
+			"</p>"
+	);
+
+	//Change the styling
 	document.getElementById('timer-selection-id').style.display = 'none'; 
 	document.getElementById('timer-id').style.display = 'inherit'; 
-
 	document.getElementById('break-text').style.display = 'none'; 
 	clickCountDown();
 });
